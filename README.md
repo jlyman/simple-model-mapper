@@ -6,7 +6,7 @@ Given an API response object you can turn it into a Javascript model by calling 
 
 ## Motivation
 
-I often find myself in situations where a project has a model both on the server and on the client, transferred via an API, but with ever so slight differences between the two that preclude just using a straight reading of the JSON or `JSON.stringify()`. Sometimes the API `snake_cases` the properties, or sometimes a property is collapsed into one coming from the API, but needs to be split into different properties on the client.
+I often find myself in situations where a project has a model both on the server and on the client, transferred via an API, but with ever so slight differences between the two that preclude just using a straight reading of the JSON or `JSON.stringify()`. Sometimes the API `snake_cases` the properties but the JS model is `camelCased`, or sometimes a property is collapsed into one coming from the API, but needs to be split into different properties on the client.
 
 Because this concern occurs again and again, it makes sense to centralize the translation of API response object <==> Javascript object model, standardize it, and pull it out so the right part of your application can have concern over it.
 
@@ -74,7 +74,7 @@ But `isAdmin` and `permissions` on the client are more involved. To determine if
 
 The return value of these functions gets concatenated in with the rest of the object, so we can return more than one property and they will all be placed on the target object. (This also means that, even though they are inside of an array targeting `isAdmin`, nothing will by default be assigned to `isAdmin` if you don't return it.)
 
-### Performing the mapping.
+### Performing the mapping
 
 Now that we have our mapping between the two defined, we can quickly perform the translation by using two of the utility methods defined: `mapModelToApi()` and `mapApiToModel()`.
 
