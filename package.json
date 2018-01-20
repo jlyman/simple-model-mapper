@@ -1,0 +1,22 @@
+{
+  "name": "simple-model-mapper",
+  "version": "1.0.0",
+  "description": "Simple utility functions for mapping to and from Javascript models and API responses",
+  "main": "modelMapper.js",
+  "scripts": {
+    "test": "jest",
+    "example": "babel-node example/example.js"
+  },
+  "author": "Joshua Lyman",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.1.4"
+  }
+}
